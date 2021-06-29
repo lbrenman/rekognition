@@ -1,0 +1,42 @@
+title: detectLabelResponse
+type: object
+description: Model for detectLabel response
+properties:
+  LabelModelVersion:
+    type: string
+  OrientationCorrection:
+    type: string
+  Labels:
+    type: array
+    items:
+      type: object
+      properties:
+        Confidence:
+          type: number
+        Name:
+          type: string
+        Parent:
+          type: array
+          items:
+            type: object
+            properties:
+              Name:
+                type: string
+        Instances:
+          type: array
+          items:
+            type: object
+            properties:
+              Confidence:
+                type: number
+              BoundingBox:
+                type: object
+                properties:
+                  Height:
+                    type: number
+                  Left:
+                    type: number
+                  Top:
+                    type: number
+                  Width:
+                    type: number

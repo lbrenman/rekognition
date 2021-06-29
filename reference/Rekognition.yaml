@@ -1,0 +1,35 @@
+swagger: '2.0'
+info:
+  title: Rekognition
+  version: '1.0'
+  description: AWS Rekognition Image Processing API's
+  contact:
+    name: Leor Brenman
+    email: lbrenman99@hotmail.com
+host: 'localhost:3000'
+schemes:
+  - http
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  /detectLabels:
+    post:
+      summary: Detect Labels
+      operationId: post-detectLabels
+      responses:
+        '200':
+          description: OK
+      tags:
+        - detectLabels
+      description: Detect Labels in image
+definitions: {}
+tags:
+  - name: detectLabels
+  - name: Rekognition
+securityDefinitions:
+  API Key - 1:
+    name: APIKey
+    type: apiKey
+    in: header
