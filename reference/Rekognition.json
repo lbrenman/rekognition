@@ -1,0 +1,77 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Rekognition",
+    "version": "1.0",
+    "description": "AWS Rekognition Image Processing APIs  ",
+    "contact": {
+      "name": "Leor Brenman",
+      "email": "lbrenman99@hotmail.com"
+    }
+  },
+  "host": "localhost:3000",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "paths": {
+    "/detectlabels": {
+      "post": {
+        "summary": "Detect Labels",
+        "operationId": "post-detectlabels",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "../models/detectLabelResponse.yaml"
+            }
+          }
+        },
+        "description": "Detect objects (labels) in an image  ",
+        "security": [
+          {
+            "apikey": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "tags": [
+    {
+      "name": "Rekognition"
+    }
+  ],
+  "securityDefinitions": {
+    "apikey": {
+      "name": "apikey",
+      "type": "apiKey",
+      "in": "query"
+    }
+  },
+  "security": [
+    {
+      "apikey": []
+    }
+  ]
+}
