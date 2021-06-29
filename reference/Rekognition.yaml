@@ -12,7 +12,27 @@ servers:
     description: Local Host
   - url: 'https://localhost:3000'
     description: Published
-paths: {}
+paths:
+  /detectLabels:
+    get:
+      summary: Detect Labels
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/detectLabelResponse.yaml
+      operationId: get-detectLabels
+      description: Detect objects (labels) in image
+      security:
+        - apikey: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/image.yaml
 components:
   schemas: {}
   securitySchemes:
