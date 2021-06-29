@@ -46,8 +46,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "image": {
-                  "type": "string"
+                "Image": {
+                  "type": "object",
+                  "properties": {
+                    "Bytes": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
