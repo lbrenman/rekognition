@@ -21,15 +21,24 @@ paths:
       responses:
         '200':
           description: OK
+          schema:
+            $ref: ../models/detectLabelResponse.yaml
       tags:
         - detectLabels
       description: Detect Labels in image
+      security:
+        - apikey: []
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: ../models/image.yaml
 definitions: {}
 tags:
   - name: detectLabels
   - name: Rekognition
 securityDefinitions:
-  API Key - 1:
-    name: APIKey
+  apikey:
+    name: apikey
     type: apiKey
     in: header
