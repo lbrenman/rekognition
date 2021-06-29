@@ -47,12 +47,7 @@
               "type": "object",
               "properties": {
                 "Image": {
-                  "type": "object",
-                  "properties": {
-                    "Bytes": {
-                      "type": "string"
-                    }
-                  }
+                  "type": "string"
                 }
               }
             }
