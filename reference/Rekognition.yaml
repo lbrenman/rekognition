@@ -1,44 +1,41 @@
-swagger: '2.0'
+openapi: 3.1.0
 info:
   title: Rekognition
   version: '1.0'
-  description: AWS Rekognition Image Processing API's
+  summary: AWS Rekognition based API
+  description: AWS Rekognition based API
   contact:
     name: Leor Brenman
     email: lbrenman99@hotmail.com
-host: 'localhost:3000'
-schemes:
-  - http
-produces:
-  - application/json
-consumes:
-  - application/json
+servers:
+  - url: 'http://localhost:3000'
+    description: Leor Brenman
 paths:
   /detectLabels:
     post:
-      summary: Detect Labels
+      summary: ''
       operationId: post-detectLabels
       responses:
         '200':
           description: OK
-          schema:
-            $ref: ../models/detectLabelResponse.yaml
-      tags:
-        - detectLabels
-      description: Detect Labels in image
+          content:
+            application/json:
+              schema:
+                $ref: ../models/detectLabelResponse.yaml
+      description: Detect objects in an image and return as labels
       security:
         - apikey: []
-      parameters:
-        - in: body
-          name: body
-          schema:
-            $ref: ../models/image.yaml
-definitions: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/image.yaml
+components:
+  schemas: {}
+  securitySchemes:
+    apikey:
+      name: apikey
+      type: apiKey
+      in: query
 tags:
-  - name: detectLabels
   - name: Rekognition
-securityDefinitions:
-  apikey:
-    name: apikey
-    type: apiKey
-    in: header
